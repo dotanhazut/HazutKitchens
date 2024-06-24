@@ -1,1 +1,199 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    margin-right: 50%;
+}
+.category-links {
+    list-style: none; /* Removes default list styles */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Aligns items in a row */
+    justify-content: center;
+    align-items: center; /* Centers the links vertically */
+
+}
+
+.category-links li {
+    margin-right: 20px; /* Adds spacing between the links */
+}
+
+
+
+.category-links li:last-child {
+    margin-right: 0; /* Removes margin from the last link to avoid extra spacing */
+}
+
+.category-links  a {
+    color: white; /* Ensures text color is white */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 16px; /* Adjust font size as needed */
+    display: inline-block;
+}
+
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 1rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero {
+    background-image: url("assets/images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.about {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    margin-right: 5rem;
+}
+
+.about img {
+    width: 40%;
+}
+
+.gallery {
+    padding: 5rem 0;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.gallery-grid {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 1rem; /* Controls spacing between items */
+}
+
+.gallery-item {
+    display: flex; /* Ensures the image and text are in a row */
+    align-items: center; /* Vertically centers the items in each gallery-item */
+    flex-basis: 45%; /* Adjusts the base size of each item, change as necessary */
+    margin-bottom: 1rem; /* Adds space below each row */
+}
+
+.gallery-item img {
+    max-width: 25%; /* Adjusts the image width relative to its container */
+    height: auto; /* Keeps image aspect ratio intact */
+}
+
+.gallery-item p {
+    flex-grow: 1; /* Allows the text to fill the remaining space */
+    margin-left: 20px; /* Adds space between the image and the text */
+    text-align: left; /* Ensures text is aligned to the left */
+}
+
+.contact {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.contact form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+
+.contact form input,
+.contact form textarea {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.contact form textarea {
+    height: 10rem;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color:#333;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+
