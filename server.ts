@@ -22,7 +22,7 @@ export function app(): express.Express {
   // Serve static files from /browser
   server.get('**', express.static(browserDistFolder, {
     maxAge: '1y',
-    index: 'index.html',
+    index: 'home.html',
   }));
 
   // All regular routes use the Angular engine
