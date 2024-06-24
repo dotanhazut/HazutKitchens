@@ -1,0 +1,30 @@
+.hero {
+  background-size: cover;
+  background-position: center;
+  /*height: 100vh;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+#about p {
+  font-size: 1.2rem;
+  margin-right: 5rem;
+}

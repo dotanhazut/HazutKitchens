@@ -1,0 +1,32 @@
+
+.gallery {
+  padding: 5rem 0;
+}
+
+.gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.gallery-grid {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 1rem; /* Controls spacing between items */
+}
+
+.gallery-item {
+  display: flex; /* Ensures the image and text are in a row */
+  align-items: center; /* Vertically centers the items in each gallery-item */
+  flex-basis: 45%; /* Adjusts the base size of each item, change as necessary */
+  margin-bottom: 1rem; /* Adds space below each row */
+}
+
+.gallery-item img {
+  max-width: 25%; /* Adjusts the image width relative to its container */
+  height: auto; /* Keeps image aspect ratio intact */
+}
+
+.gallery-item p {
+  flex-grow: 1; /* Allows the text to fill the remaining space */
+  margin-left: 20px; /* Adds space between the image and the text */
+  text-align: left; /* Ensures text is aligned to the left */
+}
