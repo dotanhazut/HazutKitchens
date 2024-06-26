@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ProductsService} from "../../products.service";
+import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-products',
-  standalone: true,
-  imports: [],
   templateUrl: './products.html',
-  styleUrl: './products.css'
+  standalone: true,
+  imports:[CommonModule,HttpClientModule],
+  styleUrls: ['./products.css']
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit{
+  products:any [] = [];
 
+  constructor(private productsService:ProductsService)  {
+  }
+  ngOnInit() {
+    this.productsService.getProducts().subscribe({
+      next: data => {
+        this.products = data;
+      },
+      error: err => {
+        console.error('Error getting products.components.ts',err);
+      }
+    });
+  }
 }
