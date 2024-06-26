@@ -7,21 +7,29 @@
 </head>
 <body>
 
-
-
 <section id="gallery" class="gallery">
-
   <div class="container">
     <h2>Our Work</h2>
     <div class="gallery-grid">
-      <div class="gallery-item"  *ngFor="let product of products">
-          <img src="{{product.title}}"
-               alt= "{{ product.name }}"/>
-          <p id="{{product.id}}">{{ product.name }} </p>
+      <div class="gallery-item" *ngFor="let product of products">
+        <img src="{{product.title}}" alt="{{ product.name }}"/>
+        <p id="{{product.id}}">
+          {{ product.name }} {{ product.price }}$
+          <input type="checkbox" name="productIds" value="{{product.id}}" [(ngModel)]="product.selected" (change)="updateTotal()">
+        </p>
       </div>
-       Add more gallery items here
+      <!-- Placeholder for additional gallery items -->
     </div>
   </div>
+  <form class="purchase-container" action="/submit-purchase" method="POST">
+    <input type="text" name="customerId" placeholder="Customer ID" required />
+    <button type="submit">Purchase</button>
+    <div class="total-price">
+      Total Price: {{ totalPrice }}$
+    </div>
+  </form>
 </section>
+
+
 </body>
 </html>

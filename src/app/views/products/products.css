@@ -30,3 +30,11 @@
   margin-left: 20px; /* Adds space between the image and the text */
   text-align: left; /* Ensures text is aligned to the left */
 }
+.purchase-button{
+  display: flex;
+  align-content: center;
+  align-items: center; /* Vertically centers the items in each gallery-item */
+  margin-left: 50%; /* Adds space between the image and the text */
+  margin-top: 5%; /* Adds space between the image and the text */
+
+}
