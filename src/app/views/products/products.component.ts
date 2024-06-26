@@ -1,9 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {ProductsService} from "../../products.service";
 import {HttpClientModule} from "@angular/common/http";
 import {Products} from "../../models/products";
-import {Observable} from "rxjs";
+import {DataService} from "../../services/dataService";
 
 @Component({
   selector: 'app-products',
@@ -11,14 +10,14 @@ import {Observable} from "rxjs";
   standalone: true,
   imports:[CommonModule,HttpClientModule],
   styleUrls: ['./products.css'],
-  providers: [ProductsService]
+  providers: [DataService]
 })
-export class ProductsComponent {
-  products:Observable<any> [] = [];
-  constructor(private productsService: ProductsService) { }
+export class ProductsComponent implements OnInit{
+  products:Products[] = [];
+  constructor(protected productsService: DataService) { }
 
   ngOnInit() {
-    this.productsService.getProducts().subscribe({
+    this.productsService.getProductList().subscribe({
       next: (data) => {
         console.log('Products data:', data);
         this.products = data;
@@ -28,4 +27,6 @@ export class ProductsComponent {
       }
     });
   }
+
+  protected readonly console = console;
 }

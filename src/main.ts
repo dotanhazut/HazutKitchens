@@ -13,4 +13,3 @@ bootstrapApplication(AppComponent, appConfig)
         }
     });
 });
-
