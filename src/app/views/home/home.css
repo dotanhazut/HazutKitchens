@@ -1,3 +1,4 @@
+
 .hero {
   background-size: cover;
   background-position: center;
@@ -28,3 +29,26 @@
   font-size: 1.2rem;
   margin-right: 5rem;
 }
+
+.hero .container {
+  margin-top: 5rem;
+}
+
+.slideshow-container {
+  width: 100%;
+  height: auto; // Adjust this based on the aspect ratio of your image
+position: relative;
+  overflow: hidden; // Ensures nothing outside the container is visible
+}
+
+.mySlide img {
+  width: 100%;
+  animation: fadeInOut 5s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+

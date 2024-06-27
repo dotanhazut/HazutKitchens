@@ -17,7 +17,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 export class ProductsComponent implements OnInit{
   products:Products[] = [];
   totalPrice: number = 0;
-  customerId: number = 0 ;
+  customerId: number=0;
   constructor(protected productsService: DataService) { }
 
   ngOnInit() {
@@ -53,6 +53,7 @@ export class ProductsComponent implements OnInit{
 
     this.productsService.submitPurchase(payload).subscribe({
       next: (response) => {
+        alert('Purchase successful');
         console.log('Purchase successful', response);
       },
       error: (err) => {

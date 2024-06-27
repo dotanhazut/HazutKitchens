@@ -4,11 +4,13 @@ export class Products {
   public name: string = '';
   public title: string = '';
   public price: number = 0;
-  constructor(id:number,name:string, title: string,price :number) {
+  public description: string = '';
+  constructor(id:number,name:string, title: string,price :number,description:string) {
     this.id = id;
     this.name = name;
     this.title = title;
     this.price = price;
+    this.description = description;
     this.selected = false;
   }
 

@@ -13,21 +13,25 @@
     <div class="gallery-grid">
       <div class="gallery-item" *ngFor="let product of products">
         <img src="{{product.title}}" alt="{{ product.name }}"/>
-        <p id="{{product.id}}">
-          {{ product.name }} {{ product.price }}$
+        <p class = "product-details">
+
+          <span class="product-name">{{ product.name }}</span>
+
+          <br>{{ product.description }} <br> {{ product.price }}$<br>
           <input type="checkbox" name="productIds" value="{{product.id}}" [(ngModel)]="product.selected" (change)="updateTotal()">
+
         </p>
       </div>
       <!-- Placeholder for additional gallery items -->
     </div>
   </div>
-  <form class="purchase-container" (submit)="submitPurchase($event)" method="POST">
+  <form class="purchase-button" (submit)="submitPurchase($event)" method="POST">
     <input type="text" name="customerId" [(ngModel)]="customerId" placeholder="Customer ID" required />
     <button type="submit">Purchase</button>
+  </form>
     <div class="total-price">
       Total Price: {{ totalPrice }}$
     </div>
-  </form>
 
 </section>
 

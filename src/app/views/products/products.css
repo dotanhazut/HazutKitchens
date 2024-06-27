@@ -1,40 +1,96 @@
-
 .gallery {
   padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Centers text horizontally */
 }
 
 .gallery h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
 }
+
 .gallery-grid {
   display: grid;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a flexible number of columns depending on the viewport size */
   gap: 1rem; /* Controls spacing between items */
+  width: 100%; /* Ensures the grid takes full width */
+  margin-left: 12%;
+}
+
+@media (max-width: 600px) { /* Adjusts the layout for screens narrower than 600px */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Sets the grid to a single column */
+    width: 50%;
+    margin-left: 12%;
+    gap: 1rem
+  }
 }
 
 .gallery-item {
-  display: flex; /* Ensures the image and text are in a row */
-  align-items: center; /* Vertically centers the items in each gallery-item */
-  flex-basis: 45%; /* Adjusts the base size of each item, change as necessary */
-  margin-bottom: 1rem; /* Adds space below each row */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text within each item */
+  padding: 1rem; /* Adds padding around the content */
+  border: 1px solid #ccc; /* Adds a border for table-like separation */
 }
 
 .gallery-item img {
-  max-width: 25%; /* Adjusts the image width relative to its container */
-  height: auto; /* Keeps image aspect ratio intact */
+  width: 100%; /* Ensures the image takes up the full width of its container */
+  height: auto; /* Maintains aspect ratio */
+  margin-bottom: 1rem; /* Space below the image */
 }
 
 .gallery-item p {
-  flex-grow: 1; /* Allows the text to fill the remaining space */
-  margin-left: 20px; /* Adds space between the image and the text */
-  text-align: left; /* Ensures text is aligned to the left */
+  margin: 0; /* Removes default paragraph margin */
+  color: black;
 }
-.purchase-button{
-  display: flex;
-  align-content: center;
-  align-items: center; /* Vertically centers the items in each gallery-item */
-  margin-left: 50%; /* Adds space between the image and the text */
-  margin-top: 5%; /* Adds space between the image and the text */
 
+.purchase-button {
+  display: flex;
+  justify-content: center; /* Centers button horizontally */
+  margin-top: 2rem; /* Space above the button */
+  width: 100%; /* Ensures form takes full width */
+}
+
+.purchase-button input[type="text"], .purchase-button button {
+  padding: 0.8rem; /* Adds padding to make the fields easier to interact with */
+  margin: 0.5rem; /* Adds space between the input and the button */
+  border: 2px solid #ccc; /* Adds a border to the fields */
+  border-radius: 30px; /* Rounds the corners of the fields */
+  font-size: 1rem; /* Increases the font size for better readability */
+}
+
+.purchase-button button {
+  background-color: #007BFF; /* Sets a blue background color */
+  color: white; /* Sets the text color to white */
+  border: none; /* Removes the border */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color change on hover */
+}
+
+.purchase-button button:hover {
+  background-color: #0056b3; /* Darkens the button on hover for a visual effect */
+}
+
+.total-price {
+  display: flex;
+  justify-content: center; /* Centers the total price text */
+  margin-top: 1rem; /* Space above the total price */
+  font-size: 1.5rem;
+  color:black;
+}
+
+.product-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.product-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligns child content to the bottom */
+  height: 100%; /* Ensure the div takes up full height */
 }

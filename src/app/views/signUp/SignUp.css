@@ -29,7 +29,14 @@
 .contact form textarea {
   height: 10rem;
 }
-.btn{
+
+.btn {
+  grid-column: span 2;
   background-color: black;
-  color:white;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.container {
+  margin-bottom: 30%;
 }
