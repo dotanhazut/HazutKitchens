@@ -5,6 +5,7 @@ import {Products} from "../../models/products";
 import {DataService} from "../../services/dataService";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.html',
@@ -37,6 +38,28 @@ export class ProductsComponent implements OnInit{
     this.totalPrice = this.products
       .filter(product => product.selected)
       .reduce((sum, product) => sum + product.price, 0);
+  }
+  submitPurchase(event: Event) {
+    event.preventDefault();
+
+    const selectedProducts = this.products
+      .filter(product => product.selected)
+      .map(product => product.id);
+
+    const payload = {
+      customerId: this.customerId,
+      productIds: selectedProducts
+    };
+
+    this.productsService.submitPurchase(payload).subscribe({
+      next: (response) => {
+        console.log('Purchase successful', response);
+      },
+      error: (err) => {
+        alert("The purchase failed");
+        console.error('Error submitting purchase', err);
+      }
+    });
   }
 
 }

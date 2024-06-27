@@ -21,13 +21,14 @@
       <!-- Placeholder for additional gallery items -->
     </div>
   </div>
-  <form class="purchase-container" action="/submit-purchase" method="POST">
-    <input type="text" name="customerId" placeholder="Customer ID" required />
+  <form class="purchase-container" (submit)="submitPurchase($event)" method="POST">
+    <input type="text" name="customerId" [(ngModel)]="customerId" placeholder="Customer ID" required />
     <button type="submit">Purchase</button>
     <div class="total-price">
       Total Price: {{ totalPrice }}$
     </div>
   </form>
+
 </section>
 
 

@@ -8,6 +8,7 @@ import { Products } from '../models/products';
 })
 export class DataService {
   private apiUrlCustomers = 'http://localhost:3000/customers';
+  private apiUrl = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
 
   getProductList(): Observable<Products[]> {
@@ -19,4 +20,8 @@ export class DataService {
   addCustomer(customer: any): Observable<any> {
     return this.http.post<any>(this.apiUrlCustomers, customer);
   }
+  submitPurchase(payload: { customerId: number, productIds: number[] }) {
+    return this.http.post(`${this.apiUrl}/submit-purchase`, payload);
+  }
+
 }
