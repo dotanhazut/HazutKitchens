@@ -36,9 +36,9 @@
 
 .slideshow-container {
   width: 100%;
-  height: auto; // Adjust this based on the aspect ratio of your image
+  height: auto;
 position: relative;
-  overflow: hidden; // Ensures nothing outside the container is visible
+  overflow: hidden;
 }
 
 .mySlide img {
