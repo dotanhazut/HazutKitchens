@@ -1,3 +1,4 @@
+// src/app/services/dataService.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -32,4 +33,8 @@ export class DataService {
   }
 
 
+
+  login(username: string | undefined, email: string | undefined) {
+    return this.http.post(`${this.apiUrl}/login`, {username, email});
+  }
 }

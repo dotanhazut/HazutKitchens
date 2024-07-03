@@ -41,7 +41,10 @@ export class ProductsComponent implements OnInit{
   }
   submitPurchase(event: Event) {
     event.preventDefault();
-
+    if (!this.customerId) {
+      alert('You must be logged in to make a purchase');
+      return;
+    }
     const selectedProducts = this.products
       .filter(product => product.selected)
       .map(product => product.id);
