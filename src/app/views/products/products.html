@@ -12,25 +12,36 @@
     <div class="gallery-grid">
       <div class="gallery-item" *ngFor="let product of products">
         <img src="{{product.title}}" alt="{{ product.name }}"/>
-        <p class = "product-details">
+        <p class="product-details">
 
           <span class="product-name">{{ product.name }}</span>
 
           <br>{{ product.description }} <br> {{ product.price }}$<br>
-          <input type="checkbox" name="productIds" value="{{product.id}}" [(ngModel)]="product.selected" (change)="updateTotal()">
+          <input type="checkbox" name="productIds" value="{{product.id}}" [(ngModel)]="product.selected"
+                 (change)="updateTotal()">
 
         </p>
       </div>
       <!-- Placeholder for additional gallery items -->
     </div>
   </div>
-  <form class="purchase-button" (submit)="submitPurchase($event)" method="POST">
-    <input type="text" placeholder="Customer ID" required [(ngModel)]="customerId" name="customerId" />
-    <button type="submit">Purchase</button>
-  </form>
+  <div *ngIf="DataService.isLogged.value; else notLogged">
+    <form class="purchase-button" (submit)="submitPurchase($event)" method="POST">
+      <button type="submit">Purchase</button>
+    </form>
     <div class="total-price">
       Total Price: {{ totalPrice }}$
     </div>
+  </div>
+  <ng-template #notLogged>
+    <p>Log in or sign up to make a purchase </p>
+    <button >
+      <a routerLink = "/signUp" routerLinkActive="active">SignUp</a>
+    </button>
+    <button>
+      <a routerLink = "/login" routerLinkActive= "active">Log In</a>
+    </button>
+  </ng-template>
 </section>
 </body>
 </html>

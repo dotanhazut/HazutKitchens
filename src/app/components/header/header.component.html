@@ -4,12 +4,10 @@
        src="https://d3m9l0v76dty0.cloudfront.net/system/logos/686/original/a86b957031c6e27e76362b8c071b3e74.png"
        alt="About Us"/>
   <div class="container">
-    <nav class="category-links" *ngFor = "let item of menuItems">
-      <li  *ngIf="item.visible()">
-        <a [routerLink]="item.path" routerLinkActive="active">{{ item.label }}</a>
-      </li>
-    </nav>
-  </div>
+      <nav class="category-links" >
+        <li *ngFor="let item of menuItems">
+        <a *ngIf="item.visible()" [routerLink]="item.path" routerLinkActive="active">{{ item.label }}</a>
+        </li>
+      </nav>
+    </div>
 </nav>
-
-

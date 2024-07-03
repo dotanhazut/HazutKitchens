@@ -17,10 +17,11 @@ import { Products } from "../../models/products";
 export class AdminComponent implements OnInit {
   newProduct: { price: number; name: string; description: string; title: string } = {name:'', title: '',price :0,description:''};
   products: Products[] = [];
-
+  isAdmin: boolean = DataService.isAdmin.getValue();
   constructor(protected dataService: DataService) { }
 
   ngOnInit() {
+    console.log(this.isAdmin);
     this.loadProducts();
   }
 
@@ -56,4 +57,6 @@ export class AdminComponent implements OnInit {
       error: (err) => console.error('Error removing product', err)
     });
   }
+
+  protected readonly DataService = DataService;
 }

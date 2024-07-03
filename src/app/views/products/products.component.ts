@@ -4,20 +4,21 @@ import {HttpClientModule} from "@angular/common/http";
 import {Products} from "../../models/products";
 import {DataService} from "../../services/dataService";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.html',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, HttpClientModule, ReactiveFormsModule, FormsModule, RouterLink, RouterLinkActive],
   styleUrls: ['./products.css'],
   providers: [DataService]
 })
 export class ProductsComponent implements OnInit{
   products:Products[] = [];
   totalPrice: number = 0;
-  customerId: number=0;
+  email: string="";
   constructor(protected productsService: DataService) { }
 
   ngOnInit() {
@@ -41,16 +42,12 @@ export class ProductsComponent implements OnInit{
   }
   submitPurchase(event: Event) {
     event.preventDefault();
-    if (!this.customerId) {
-      alert('You must be logged in to make a purchase');
-      return;
-    }
     const selectedProducts = this.products
       .filter(product => product.selected)
       .map(product => product.id);
 
     const payload = {
-      customerId: this.customerId,
+      email: DataService.email.getValue(),
       productIds: selectedProducts
     };
 
@@ -66,4 +63,5 @@ export class ProductsComponent implements OnInit{
     });
   }
 
+  protected readonly DataService = DataService;
 }
