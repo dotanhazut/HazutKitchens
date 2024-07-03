@@ -1,8 +1,6 @@
-
 .hero {
   background-size: cover;
   background-position: center;
-  /*height: 100vh;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +35,7 @@
 .slideshow-container {
   width: 100%;
   height: auto;
-position: relative;
+  position: relative;
   overflow: hidden;
 }
 
@@ -51,4 +49,30 @@ position: relative;
   50% { opacity: 1; }
 }
 
+.animated-title {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: dropDown 6s forwards;
+}
 
+@keyframes dropDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px 0;
+  }
+
+  .hero h1 {
+    font-size: 6vw; /* Adjust font size for smaller screens */
+  }
+
+  .slideshow-container {
+    padding: 0 10px;
+  }
+}

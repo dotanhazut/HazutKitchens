@@ -17,7 +17,7 @@ import { Products } from "../../models/products";
 export class AdminComponent implements OnInit {
   newProduct: { price: number; name: string; description: string; title: string } = {name:'', title: '',price :0,description:''};
   products: Products[] = [];
-  isAdmin: boolean = DataService.isAdmin.getValue();
+  isAdmin: boolean = DataService.isAdmin.getValue(); // Fixed reference to the instance variable
   constructor(protected dataService: DataService) { }
 
   ngOnInit() {
@@ -49,12 +49,19 @@ export class AdminComponent implements OnInit {
   }
 
   removeProduct(productId: number) {
+    this.products = this.products.filter(product => product.id !== productId); // Optimistic update
     this.dataService.removeProduct(productId).subscribe({
       next: () => {
-        this.products = this.products.filter(product => product.id !== productId);
         console.log('Product removed');
       },
-      error: (err) => console.error('Error removing product', err)
+      error: (err) => {
+        console.error('Error removing product', err);
+        this.loadProducts();
+        alert("You cant delete this products because someone bought them!")
+        // Revert the update if there was an error
+
+      }
+
     });
   }
 

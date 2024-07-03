@@ -7,7 +7,62 @@
       <input type="text" placeholder="Name" required [(ngModel)]="customer.name" name="name" />
       <input type="email" placeholder="Email" required [(ngModel)]="customer.email" name="email" />
       <button class="btn" type="submit">Send</button>
+
     </form>
+
+    <div class="social-links">
+      <a href="https://www.facebook.com/hazutk" class="social-link facebook">
+        Facebook <i class="fa fa-facebook"></i>
+      </a>
+      <a href="https://www.tiktok.com/discover/%D7%97%D7%96%D7%95%D7%AA-%D7%9C%D7%9E%D7%98%D7%91%D7%97" class="social-link tiktok">
+        TikTok <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.instagram.com/hazut_kitchen/" class="social-link instagram">
+        Instagram <i class="fa fa-instagram"></i>
+      </a>
+
+    </div>
+    <div class="pizza-container">
+      <img src="https://caputoflour.com/cdn/shop/articles/NeapolitanPizza.jpg?v=1695313385" alt="Pizza" class="pizza">
+    </div>
+
   </div>
 
 </section>
+
+<!-- Styles for social links -->
+<style>
+  .social-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .facebook {
+    background-color: #3b5998;
+  }
+  .facebook:hover {
+    background-color: #2d4373;
+  }
+  .tiktok {
+    background-color: #000000;
+  }
+  .tiktok:hover {
+    background-color: #333333;
+  }
+  .instagram {
+    background-color: #E4405F;
+    margin: 10px;
+  }
+  .instagram:hover {
+    background-color: #C32F50;
+  }
+  .fa-facebook, .fab.fa-tiktok, .fa.fa-instagram {
+    font-size: 16px;
+  }
+</style>

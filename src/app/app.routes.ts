@@ -12,7 +12,7 @@ export const routes: Routes = [
   {path: 'products', component: ProductsComponent},    // Route for Products component
   {path: 'signUp', component: SignUpComponent},
   {path: 'admin',component: AdminComponent},
-  {path:'login',component: LoginComponent}
+  {path:'login',component: LoginComponent},
   // Add other routes here
 ];
 

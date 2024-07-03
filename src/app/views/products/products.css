@@ -1,9 +1,15 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .gallery {
   padding: 5rem 0;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers content horizontally */
-  text-align: center; /* Centers text horizontally */
+  align-items: center;
+  text-align: center;
 }
 
 .gallery h2 {
@@ -13,84 +19,126 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a flexible number of columns depending on the viewport size */
-  gap: 1rem; /* Controls spacing between items */
-  width: 100%; /* Ensures the grid takes full width */
-  margin-left: 12%;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  width: 100%;
 }
 
-@media (max-width: 600px) { /* Adjusts the layout for screens narrower than 600px */
+@media (max-width: 600px) {
   .gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Sets the grid to a single column */
+    grid-template-columns: 1fr;
     width: 50%;
     margin-left: 12%;
-    gap: 1rem
+    gap: 1rem;
   }
 }
 
 .gallery-item {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  text-align: center; /* Center text within each item */
-  padding: 1rem; /* Adds padding around the content */
-  border: 1px solid #ccc; /* Adds a border for table-like separation */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
 }
 
 .gallery-item img {
-  width: 100%; /* Ensures the image takes up the full width of its container */
-  height: auto; /* Maintains aspect ratio */
-  margin-bottom: 1rem; /* Space below the image */
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 .gallery-item p {
-  margin: 0; /* Removes default paragraph margin */
+  margin: 0;
   color: black;
 }
 
 .purchase-button {
   display: flex;
-  justify-content: center; /* Centers button horizontally */
-  margin-top: 2rem; /* Space above the button */
-  width: 100%; /* Ensures form takes full width */
+  justify-content: center;
+  margin-top: 2rem;
+  width: 100%;
 }
 
 .purchase-button input[type="text"], .purchase-button button {
-  padding: 0.8rem; /* Adds padding to make the fields easier to interact with */
-  margin: 0.5rem; /* Adds space between the input and the button */
-  border: 2px solid #ccc; /* Adds a border to the fields */
-  border-radius: 30px; /* Rounds the corners of the fields */
-  font-size: 1rem; /* Increases the font size for better readability */
+  padding: 0.8rem;
+  margin: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  font-size: 1rem;
 }
 
 .purchase-button button {
-  background-color: #007BFF; /* Sets a blue background color */
-  color: white; /* Sets the text color to white */
-  border: none; /* Removes the border */
-  cursor: pointer; /* Changes the cursor to a pointer on hover */
-  transition: background-color 0.3s ease; /* Smooth transition for background color change on hover */
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .purchase-button button:hover {
-  background-color: #0056b3; /* Darkens the button on hover for a visual effect */
+  background-color: #0056b3;
 }
 
 .total-price {
   display: flex;
-  justify-content: center; /* Centers the total price text */
-  margin-top: 1rem; /* Space above the total price */
+  justify-content: center;
+  margin-top: 1rem;
   font-size: 1.5rem;
-  color:black;
+  color: black;
 }
 
 .product-name {
   font-size: 1.5em;
   font-weight: bold;
 }
-.product-details{
+
+.product-details {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Aligns child content to the bottom */
-  height: 100%; /* Ensure the div takes up full height */
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.message {
+  font-size: 1.5em;
+  margin-top: 1%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 0;
+  width: 48%;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: normal;
+}
+
+.btn a:hover {
+  color: white;
 }

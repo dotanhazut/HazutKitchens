@@ -40,3 +40,77 @@
 .container {
   margin-bottom: 30%;
 }
+/* Base styles for all social links */
+.social-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Creates space between text and icon */
+}
+
+/* Specific styles for Facebook link */
+.facebook {
+  margin: 10px;
+  background-color: #3b5998; /* Facebook's brand color */
+}
+
+.facebook:hover {
+  background-color: #2d4373; /* Darker shade on hover */
+}
+
+.fa-facebook {
+  font-size: 16px;
+}
+.social-link tiktok{
+  background-color: black;
+}
+/* TikTok styles */
+.tiktok {
+  background-color: #000000; /* TikTok's brand color is black */
+  color: white; /* Ensuring the text and icon are white */
+}
+
+.tiktok:hover {
+  background-color: #333333; /* Dark gray for hover */
+}
+
+/* Instagram styles */
+.instagram {
+  background-color: #E4405F; /* Instagram's brand color is a magenta */
+  color: white;
+}
+
+.instagram:hover {
+  background-color: #C32F50; /* Slightly darker magenta for hover */
+}
+
+/* Pizza animation */
+.pizza-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  margin: 2rem auto; /* הוספת מרווח מסביב לתמונה */
+}
+
+.pizza {
+  margin-top: 80%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%; /* מגדיר את התמונה כעגולה */
+  animation: spin 10s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
