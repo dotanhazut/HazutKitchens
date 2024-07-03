@@ -31,8 +31,12 @@ export class LoginComponent {
       },
       error: (error) => {
         console.error('Login failed', error);
-        alert('Login failed');
+        alert('Login failed please try again or sign up');
       }
     });
+  }
+
+  onSingUp() {
+    this.router.navigate(['/signUp']);
   }
 }

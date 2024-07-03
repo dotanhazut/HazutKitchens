@@ -9,6 +9,10 @@
       <label for="email">Email:</label>
       <input type="email" id="email" [(ngModel)]="email" name="email" required class="form-control">
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Log In</button>
+
+    <button type="submit" class="btn btn-login" [disabled]="!loginForm.valid">Log In</button>
+  </form>
+  <form (ngSubmit)="onSingUp()" #signup="ngForm">
+    <button type="submit" class="btn btn-signup" >Sign Up</button>
   </form>
 </div>
