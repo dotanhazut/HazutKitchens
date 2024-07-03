@@ -25,7 +25,8 @@ export class HeaderComponent {
     { label: 'Home', path: '/home', visible: () => true },
     { label: 'Products', path: '/products', visible: () => true },
     { label: 'Sign Up', path: '/signUp', visible: () => !DataService.isLogged.getValue() },
-    { label: 'login', path: '/login', visible: () => !DataService.isLogged.getValue() },
+    { label: 'Login', path: '/login', visible: () => !DataService.isLogged.getValue() },
+    { label: 'Events', path: '/events', visible: () => true },
     { label: 'Admin', path: '/admin', visible: () => DataService.isAdmin.getValue() }
   ];
 

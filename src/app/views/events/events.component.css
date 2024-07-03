@@ -1,0 +1,66 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.events {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.events h1 {
+  font-size: 3rem;
+  color: #333;
+}
+
+.events p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.video-container {
+  margin: 2rem 0;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.image-gallery img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.1);
+}
+
+.description {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Animation for images */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image-gallery img {
+  animation: fadeIn 1.5s ease-in-out;
+}
