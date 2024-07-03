@@ -1,0 +1,100 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+div {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #eeeeee;
+}
+
+form {
+  background: linear-gradient(to right, #ffffff, #e6e6f2);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 2px solid #cccccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-color: #0056b3;
+}
+
+button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.addBtn{
+  background-color: green;
+}
+.removeBtn{
+  background-color: red;
+}
+button:hover {
+  background-color: grey;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  background: #f9f9f9;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button {
+  font-size: 16px;
+}
+
+/* Enhancing hover and focus states for better user interaction */
+input[type="text"]:hover,
+input[type="number"]:hover,
+textarea:hover,
+button:hover {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}

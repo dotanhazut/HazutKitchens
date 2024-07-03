@@ -17,11 +17,19 @@ export class DataService {
     return x;
   }
 
+  addProduct(product: { price: number; name: string; description: string; title: string }): Observable<Products> {
+    return this.http.post<Products>(`${this.apiUrl}/products`, product);
+  }
+
+  removeProduct(productId: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/products/${productId}`);
+  }
   addCustomer(customer: any): Observable<any> {
     return this.http.post<any>(this.apiUrlCustomers, customer);
   }
   submitPurchase(payload: { customerId: number, productIds: number[] }) {
     return this.http.post(`${this.apiUrl}/submit-purchase`, payload);
   }
+
 
 }

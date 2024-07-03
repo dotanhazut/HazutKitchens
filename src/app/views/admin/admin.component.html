@@ -1,0 +1,17 @@
+<div>
+  <h2>Add New Product</h2>
+  <form>
+    <input [(ngModel)]="newProduct.name" placeholder="Name" name="name">
+    <input [(ngModel)]="newProduct.title" placeholder="ImgSrc" name="title">
+    <input [(ngModel)]="newProduct.price" placeholder="Price" name="price" type="number">
+    <textarea [(ngModel)]="newProduct.description" placeholder="Description" name="description"></textarea>
+    <button class = "addBtn" (click)="addProduct()">Add Product</button>
+  </form>
+  <h2>Product List</h2>
+  <ul>
+    <li *ngFor="let product of products">
+      {{product.id}} - {{ product.name }} - ${{ product.price }}
+      <button class = "removeBtn" (click)="removeProduct(product.id)">Remove</button>
+    </li>
+  </ul>
+</div>
