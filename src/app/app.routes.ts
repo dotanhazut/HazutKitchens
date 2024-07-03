@@ -5,6 +5,7 @@ import {HomeComponent} from "./views/home/home.component";
 import {SignUpComponent} from "./views/signUp/signUp.component";
 import {AdminComponent} from "./views/admin/admin.component";
 import {LoginComponent} from "./views/log-in/log-in.component";
+import {EventsComponent} from "./views/events/events.component";
 // Define your routes here
 export const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},  // Redirect to /home
@@ -13,6 +14,7 @@ export const routes: Routes = [
   {path: 'signUp', component: SignUpComponent},
   {path: 'admin',component: AdminComponent},
   {path:'login',component: LoginComponent},
+  {path : 'events',component: EventsComponent},
   // Add other routes here
 ];
 
