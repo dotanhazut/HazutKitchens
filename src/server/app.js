@@ -14,17 +14,13 @@ server.use(bodyParser.json());
 const con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "0309019959",
+  password: "D0506504003xH",
   database: "hazutkitchen"
 });
 
 con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
-});
-
-server.get('/', (req, res) => {
-  res.send("Hello World");
 });
 
 server.get('/products', (req, res) => {

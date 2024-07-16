@@ -1,7 +1,7 @@
 // src/app/components/header/header.component.ts
 import {CommonModule, NgForOf, NgIf} from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { DataService } from '../../services/dataService';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";

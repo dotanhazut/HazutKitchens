@@ -1,7 +1,7 @@
 // src/app/services/dataService.ts
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, Observable, tap} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {Products} from '../models/products';
 
 @Injectable({
@@ -16,9 +16,7 @@ export class DataService {
   }
 
   getProductList(): Observable<Products[]> {
-    let x = this.http.get<Products[]>(`${this.apiUrl}/products`);
-    console.log(x);
-    return x;
+    return this.http.get<Products[]>(`${this.apiUrl}/products`);
   }
 
   addProduct(product: { price: number; name: string; description: string; title: string }): Observable<Products> {
